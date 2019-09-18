@@ -1,5 +1,5 @@
 {
-  "name": "travel",
+  "name": "go_where",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "threeki <946629031@qq.com>",
@@ -13,6 +13,8 @@
   "dependencies": {
     "fastclick": "^1.0.6",
     "minireset.css": "0.0.5",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
