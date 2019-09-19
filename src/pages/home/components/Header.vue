@@ -21,7 +21,9 @@ export default {
 
 <!-- 添加“scoped”属性以仅将CSS限制到此组件 -->
 <style lang="stylus" scoped>
-    @import '../../../assets/styles/varibles.styl' // 引入 css变量文件
+    // @import '../../../assets/styles/varibles.styl' // 引入 css变量文件
+    // @import '~@/assets/styles/varibles.styl' // 引入 css变量文件
+    @import '~styles/varibles.styl' // 引入 css变量文件
     .header
         display: flex
         line-height: .86rem
