@@ -1,15 +1,19 @@
 <template>
   <div>
-    <home-header></home-header>  <!-- 使用 HomeHeader 组件 -->
+    <home-header></home-header>
+    <home-swiper></home-swiper>  <!-- 使用 HomeSwiper 组件 -->
+    <div>test</div>
   </div>
 </template>
 
 <script>
 import HomeHeader from './components/Header'
+import HomeSwiper from './components/Swiper'
 export default {
   name: 'Home',
   components: {
-    HomeHeader // 将组件Header，注册位局部组件
+    HomeHeader,
+    HomeSwiper // 将组件HomeSwiper，注册到局部组件
   }
 }
 </script>
