@@ -40,7 +40,7 @@ export default {
         name: '一日游'
       }, {
         id: '0006',
-        url: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
+        url: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png',
         name: '水上乐园'
       }, {
         id: '0007',
