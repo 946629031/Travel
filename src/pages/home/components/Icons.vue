@@ -1,6 +1,6 @@
 <template>
     <div class="icons">
-      <swiper>
+      <swiper :options="SwiperOption">
         <swiper-slide v-for="(page, index) of pages" :key="index">
           <div class="icon" v-for="item of page" :key="item.id">
             <div class="img-wrapper">
@@ -15,9 +15,12 @@
 
 <script>
 export default {
-  name: 'Icons',
+  name: 'HomeIcons',
   data () {
     return {
+      SwiperOption: {
+        // autoPlay: false
+      },
       imgList: [{
         id: '0001',
         url: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
@@ -103,6 +106,7 @@ export default {
         bottom: .44rem
         margin: auto
     .keywords
+      text-align center
       font-size: .22rem
       height: .44rem
       line-height: .44rem

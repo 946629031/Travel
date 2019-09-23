@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'Home'
+  name: 'HomeHeader'
 }
 </script>
 
@@ -33,6 +33,7 @@ export default {
         .header-left
             width: .64rem
             float: left
+            text-align center
         .header-input
             flex: 1
             background: #fff
@@ -41,7 +42,9 @@ export default {
             margin: .12rem .1rem 0 .1rem
             border-radius: .1rem
             color: #ccc
+            text-align center
         .header-right
+            text-align center
             width: 1.24rem
             float: right
             .arrow-icon
