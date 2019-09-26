@@ -2,7 +2,7 @@
     <div>
       <div class="home-recommend-title">热销推荐</div>
       <ul class="home-recommend-list">
-        <li>
+        <li class="item border-bottom">
           <img class="home-recommend-img" src="http://img1.qunarzz.com/sight/p0/1705/35/35ae31e6e6c8032ea3.img.jpg_200x200_7f6d7753.jpg" alt="">
           <div>
             <p class="home-recommend-item-title">广州国瑞欢乐世界</p>
@@ -10,6 +10,7 @@
             <p class="home-recommend-item-price"><span>￥99</span>起</p>
           </div>
         </li>
+        <div style="border-bottom: 1px solid #eaeaea">1</div>
       </ul>
     </div>
 </template>
@@ -29,7 +30,7 @@ export default {
     text-align left
     padding 0 .3rem
   .home-recommend-list
-    li
+    .item
       display flex
       .home-recommend-img
         width 1.9rem
