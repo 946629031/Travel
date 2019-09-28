@@ -2,22 +2,50 @@
     <div>
       <div class="home-recommend-title">热销推荐</div>
       <ul class="home-recommend-list">
-        <li class="item border-bottom">
-          <img class="home-recommend-img" src="http://img1.qunarzz.com/sight/p0/1705/35/35ae31e6e6c8032ea3.img.jpg_200x200_7f6d7753.jpg" alt="">
+        <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+          <img class="home-recommend-img" :src="item.imgUrl" alt="">
           <div>
-            <p class="home-recommend-item-title">广州国瑞欢乐世界</p>
-            <p class="home-recommend-item-desc">这次端午六一假日的泡泡之夏主题真是如梦如幻，有泡泡圈套互动游戏，漂亮姐姐带大家花式玩泡泡</p>
-            <p class="home-recommend-item-price"><span>￥99</span>起</p>
+            <p class="home-recommend-item-title">{{item.title}}</p>
+            <p class="home-recommend-item-desc">{{item.desc}}</p>
+            <p class="home-recommend-item-price"><span>{{item.price}}</span>起</p>
           </div>
         </li>
-        <div style="border-bottom: 1px solid #eaeaea">1</div>
       </ul>
     </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeRecommend'
+  name: 'HomeRecommend',
+  data () {
+    return {
+      recommendList: [{
+        id: '0001',
+        imgUrl: 'http://img1.qunarzz.com/sight/p0/1705/35/35ae31e6e6c8032ea3.img.jpg_200x200_7f6d7753.jpg',
+        title: '广州国瑞欢乐世界',
+        desc: '这次端午六一假日的泡泡之夏主题真是如梦如幻，有泡泡圈套互动游戏，漂亮姐姐带大家花式玩泡泡',
+        price: '￥99'
+      }, {
+        id: '0002',
+        imgUrl: 'http://img1.qunarzz.com/sight/p0/1605/34/34c81bc0470c6d6f90.water.jpg_200x200_5f2fbb19.jpg',
+        title: '广州PORORO主题乐园',
+        desc: '这次端午六一假日的泡泡之夏主题真是如梦如幻，有泡泡圈套互动游戏，漂亮姐姐带大家花式玩泡泡',
+        price: '￥168'
+      }, {
+        id: '0003',
+        imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/3c/3c514c20a740128b90.water.jpg_200x200_c7102a23.jpg',
+        title: '南沙百万葵园',
+        desc: '这次端午六一假日的泡泡之夏主题真是如梦如幻，有泡泡圈套互动游戏，漂亮姐姐带大家花式玩泡泡',
+        price: '￥50'
+      }, {
+        id: '0004',
+        imgUrl: 'http://img1.qunarzz.com/sight/p0/201212/24/3468c8d9e250848093835fbb.png_200x200_8f8a29ee.png',
+        title: '望谷温泉度假村',
+        desc: '这次端午六一假日的泡泡之夏主题真是如梦如幻，有泡泡圈套互动游戏，漂亮姐姐带大家花式玩泡泡',
+        price: '￥156'
+      }]
+    }
+  }
 }
 </script>
 
@@ -37,7 +65,7 @@ export default {
         height 1.9rem
         padding .2rem
       div
-        // min-width 0
+        min-width 0
         p
           font-size .3rem
           color #999
