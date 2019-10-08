@@ -1,7 +1,7 @@
 <template>
   <div>
-    <home-header></home-header>
-    <home-swiper></home-swiper>  <!-- 使用 HomeSwiper 组件 -->
+    <home-header :city='city'></home-header>
+    <home-swiper :list='swiperList'></home-swiper>  <!-- 使用 HomeSwiper 组件 -->
     <home-icons></home-icons>
     <home-recommend></home-recommend>
     <home-weekend></home-weekend>
@@ -25,6 +25,12 @@ export default {
     HomeRecommend,
     HomeWeekend
   },
+  data () {
+    return {
+      city: '',
+      swiperList: []
+    }
+  },
   mounted () {
     this.getHomeInfo()
   },
@@ -34,6 +40,12 @@ export default {
         .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {
+      res = res.data
+      if (res.ret && res.data) {
+        const data = res.data
+        this.city = data.city
+        this.swiperList = data.swiperList
+      }
       console.log(res)
     }
   }
