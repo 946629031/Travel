@@ -2,9 +2,9 @@
   <div>
     <home-header :city='city'></home-header>
     <home-swiper :list='swiperList'></home-swiper>  <!-- 使用 HomeSwiper 组件 -->
-    <home-icons></home-icons>
-    <home-recommend></home-recommend>
-    <home-weekend></home-weekend>
+    <home-icons :iconList='iconList'></home-icons>
+    <home-recommend :list='recommendList'></home-recommend>
+    <home-weekend :list='weekendList'></home-weekend>
     <div class="copyright border-top"><span>Qunar 京ICP备05021087</span><a class="qn_ml25" href="">意见反馈</a></div>
   </div>
 </template>
@@ -28,7 +28,10 @@ export default {
   data () {
     return {
       city: '',
-      swiperList: []
+      swiperList: [],
+      iconList: [],
+      recommendList: [],
+      weekendList: []
     }
   },
   mounted () {
@@ -45,6 +48,9 @@ export default {
         const data = res.data
         this.city = data.city
         this.swiperList = data.swiperList
+        this.iconList = data.iconList
+        this.recommendList = data.recommendList
+        this.weekendList = data.weekendList
       }
       console.log(res)
     }
