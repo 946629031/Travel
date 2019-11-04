@@ -23,8 +23,13 @@ export default{
   },
   data () {
     return {
-      touchStatus: false
+      touchStatus: false,
+      startY: 0,
+      timer: null
     }
+  },
+  updated () {
+    this.startY = this.$refs['A'][0].offsetTop // 获取A字母 到上级层顶部的距离
   },
   computed: {
     letters () {
@@ -45,12 +50,16 @@ export default{
     },
     handleTouchMove (e) {
       if (this.touchStatus) {
-        const startY = this.$refs['A'][0].offsetTop // 获取A字母 到上级层顶部的距离
-        let touchY = e.touches[0].clientY
-        let index = Math.floor((touchY - 89 - startY) / 20)
-        if (index >= 0 && index < this.letters.length) {
-          this.$emit('change', this.letters[index])
+        if (this.timer) {
+          clearTimeout(this.timer)
         }
+        this.timer = setTimeout(() => { // 利用setTimeout 做函数节流
+          let touchY = e.touches[0].clientY
+          let index = Math.floor((touchY - 89 - this.startY) / 20)
+          if (index >= 0 && index < this.letters.length) {
+            this.$emit('change', this.letters[index])
+          }
+        }, 16)
       }
     },
     handleTouchEnd () {
