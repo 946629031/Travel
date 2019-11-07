@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import fastClick from 'fastclick' // 移动端 300毫秒 点击延迟问题
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import store from './store'
 import 'minireset.css'
 import 'styles/border.css' // 1px像素边框的问题
 import 'styles/iconfont.css' // 引入iconfont
@@ -18,6 +19,7 @@ Vue.use(VueAwesomeSwiper)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

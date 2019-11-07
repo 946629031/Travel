@@ -5,27 +5,31 @@
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">北京</div>
+            <div class="button">{{this.$store.state.city}}</div>
           </div>
         </div>
       </div>
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
-          <div class="button-wrapper" v-for="city of hot" :key='city.id'>
+          <div
+            class="button-wrapper"
+            v-for="city of hot"
+            :key='city.id'
+            @click='handleCityClick(city.name)'
+          >
             <div class="button">{{city.name}}</div>
           </div>
         </div>
       </div>
-      <div
-        class="area"
-        v-for="(item, key) of cities"
-        :key="key"
-        :ref='key'
-      >
+      <div class="area" v-for="(item, key) of cities" :key="key" :ref='key'>
         <div class="title border-topbottom">{{key}}</div>
         <div class="item-list">
-          <div class="item border-bottom" v-for="city of item" :key='city.id'>{{city.name}}</div>
+          <div class="item border-bottom"
+            v-for="city of item"
+            :key='city.id'
+            @click='handleCityClick(city.name)'
+          >{{city.name}}</div>
         </div>
       </div>
     </div>
@@ -41,14 +45,19 @@ export default{
     cities: Object,
     letter: String
   },
+  methods: {
+    handleCityClick (city) {
+      this.$store.dispatch('changeCity', city) // 通过dispatch 方法，调用 vuex 的 actions，并携带city参数
+      this.$router.push('/')
+      console.log(city)
+    }
+  },
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)
   },
   watch: {
     letter () {
-      // console.log(this.letter)
       if (this.letter) {
-        // console.log(this.$refs)
         let element = this.$refs[this.letter][0]
         this.scroll.scrollToElement(element)
       }

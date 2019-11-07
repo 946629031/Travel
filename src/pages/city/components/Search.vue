@@ -5,7 +5,12 @@
     </div>
     <div class="search-content" v-show="keyword" ref='search'>
       <ul>
-        <li class="search-item border-bottom" v-for="item of list" :key='item.id'>{{item.name}}</li>
+        <li
+          class="search-item border-bottom"
+          v-for="item of list"
+          :key='item.id'
+          @click='handleCityClick(item.name)'
+        >{{item.name}}</li>
       </ul>
     </div>
   </div>
@@ -45,6 +50,13 @@ export default{
         }
         this.list = result
       }, 100)
+    }
+  },
+  methods: {
+    handleCityClick (city) {
+      this.$store.dispatch('changeCity', city) // 通过dispatch 方法，调用 vuex 的 actions，并携带city参数
+      this.$router.push('/')
+      console.log(city)
     }
   },
   mounted () {
