@@ -2,14 +2,20 @@
     <div>
       <div class="home-recommend-title">热销推荐</div>
       <ul class="home-recommend-list">
-        <li class="item border-bottom" v-for="item of list" :key="item.id">
+        <router-link
+          tag='li'
+          class="item border-bottom"
+          v-for="item of list"
+          :key="item.id"
+          :to="'/detail/' + item.id"
+        >
           <img class="home-recommend-img" :src="item.imgUrl" alt="">
           <div>
             <p class="home-recommend-item-title">{{item.title}}</p>
             <p class="home-recommend-item-desc">{{item.desc}}</p>
             <p class="home-recommend-item-price"><span>{{item.price}}</span>起</p>
           </div>
-        </li>
+        </router-link>
       </ul>
     </div>
 </template>
