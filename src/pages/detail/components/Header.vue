@@ -63,6 +63,7 @@ export default {
       background rgba(0,0,0,.8)
       z-index 11
     .header-fixed
+      z-index 11
       background $bgColor
       font-size .32rem
       height $headerHeight
