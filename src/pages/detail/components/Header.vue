@@ -27,10 +27,13 @@ export default {
   activated () {
     window.addEventListener('scroll', this.handleScroll)
   },
+  deactivated () {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
   methods: {
     handleScroll () {
       const top = document.documentElement.scrollTop
-      console.log(top)
+      console.log('scroll')
       if (top > 60) {
         let opacity = top / 140
         opacity = opacity > 1 ? 1 : opacity // 限制 不让 opacity 大于1
