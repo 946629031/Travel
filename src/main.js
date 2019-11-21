@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import fastClick from 'fastclick' // 移动端 300毫秒 点击延迟问题
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'babel-polyfill'
 import store from './store'
 import 'minireset.css'
 import 'styles/border.css' // 1px像素边框的问题
