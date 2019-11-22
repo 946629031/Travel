@@ -12,7 +12,10 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {   // 代理转发
       '/api': {
-        target: 'http://localhost:80'
+        target: 'http://localhost:8080',
+        pathRewrite: {
+          '^/api': '/static/data_demo'
+        }
       }
     },
 
